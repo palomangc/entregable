@@ -10,7 +10,7 @@
       <router-link to="/">Inicio</router-link>
       <router-link to="/juegos">Lista de juegos</router-link>
       <router-link to="/crear">Crear juego</router-link>
-      <router-link to="/editar/id:">Editar juego</router-link>
+    <!--<router-link to="/editar/id:">Editar juego</router-link>--> 
     </nav>
 
     <router-view v-slot="{ Component }">
@@ -18,6 +18,7 @@
         :is="Component" 
         :juegos="juegos" 
         @nuevo-juego="agregarJuego"
+        @actualizar-juego="actualizarJuego"
       />
     </router-view>
   </div>
@@ -38,8 +39,19 @@ export default {
     };
   },
 methods: {
+  //Agregar juego nuevo
     agregarJuego(juegoNuevo) {
       this.juegos.push(juegoNuevo);
+    },
+    //Editar juego existente
+    actualizarJuego(juegoActualizado) {
+      const index = this.juegos.findIndex(juego => juego.id === juegoActualizado.id);
+      if (index !== -1) {
+        this.juegos.splice(index, 1, juegoActualizado);
+        console.log('Juego actualizado:', this.juegos);
+      } else {
+        console.error('No se encontró el juego para editar con ID:', juegoActualizado.id);
+      }
     }
    }
   };
