@@ -1,3 +1,46 @@
+<script setup>
+import { reactive } from 'vue'
+import { supabase } from '../lib/supabase'
+import { useRouter } from 'vue-router'
+import ListaJuegos from './ListaJuegos.vue'
+
+const emit = defineEmits(['nuevo-juego'])
+const router = useRouter()
+
+const juego = reactive({
+  nombre: '',
+  puntos: 0,
+  tiempo: 0,
+  completado: false
+})
+
+const crearJuego = async () => {
+  const {data, error} = await supabase
+  .from ('juegos')
+  .insert ([{
+    nombre: juego.nombre,
+    puntos: juego.puntos,
+    tiempo: juego.tiempo,
+    completado: juego.completado
+  }])
+  if (error) {
+    console.info ("No se ha podido crear el juego en Supabase", error.message)
+    alert('Hubo un error al guardar el juego')
+    return
+  }
+
+  emit ('nuevo-juego', data)
+  alert ('Juego creado con éxito')
+  //Limpiar campos
+  juego.nombre = ''
+  juego.puntos = 0
+  juego.tiempo = 0
+  juego.completado = false
+  router.push('/juegos')
+}
+
+</script>
+
 <template>
   <div>
     <div class="formulario">
@@ -23,31 +66,3 @@
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'CrearJuego',
-  emits: ['nuevo-juego'],
-  data() {
-    return {
-      juego: {
-        nombre: '',
-        puntos: 0,
-        tiempo: 0,
-        completado: false
-      }
-    };
-  },
-  methods: {
-    crearJuego() {
-      this.$emit('nuevo-juego', { ...this.juego, id: Date.now() });
-      this.juego = {
-        nombre: '',
-        puntos: 0,
-        tiempo: 0,
-        completado: false
-      };
-    }
-  }
-};
-</script>
