@@ -268,3 +268,71 @@ input[type="checkbox"] {
   background-color: #f44336;
   color: white;
 }
+
+/*Filtros*/
+.filtros {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filtros label {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/*Estadísticas home*/
+/* Estilo para las estadísticas de inicio */
+.estadisticas {
+  background-color: var(--color-secundario);
+  border: 2px solid var(--color-enlace);
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  margin: 2rem auto;
+  max-width: 500px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.estadisticas h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: var(--color-titulo);
+}
+
+.estadisticas ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.estadisticas li {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  color: var(--color-texto);
+}
+
+/* Botones de acceso rápido en la pantalla de inicio */
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.botones .btn {
+  padding: 0.7rem 1.2rem;
+  background-color: var(--color-enlace);
+  color: white;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.botones .btn:hover {
+  background-color: #2ad048;
+}
