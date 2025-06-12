@@ -88,7 +88,7 @@ async function actualizarJuego() {
       </div>
 
       <div class="form-group" style="display: flex; align-items: center; gap: 2.5rem;">
-        <label for="completado" style="margin: 0;">Completado:</label>
+        <label for="completado" style="margin-right: 80px; justify-content: left;">Completado:</label>
         <input type="checkbox" id="completado" v-model="form.completado" />
         <span style="font-weight: bold;">{{ form.completado ? 'Sí' : 'No' }}</span>
       </div>

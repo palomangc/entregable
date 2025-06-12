@@ -139,7 +139,7 @@ return lista
         </button>
         <div class="game-actions">
           <button @click="editarJuego(juego.id)" class="edit-button">Editar</button>
-          <button @click="borrarJuego(juego.id)">Borrar</button>
+          <button @click="borrarJuego(juego.id)" class="delete-button">Borrar</button>
         </div>
       </div>
     </div>
