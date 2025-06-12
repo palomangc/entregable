@@ -11,7 +11,7 @@
 /* Estilos globales */
 body {
   background-color: var(--color-fondo);
-  font-family: 'Comuc Sans MS', cursive, sans-serif;
+  font-family: 'Comic Sans MS', 'Arial', sans-serif;
   color: var(--color-texto);
   margin: 0;
   padding: 0;
