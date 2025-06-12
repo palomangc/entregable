@@ -32,8 +32,8 @@ onMounted(async () => {
       <h2>📊Estadísticas</h2>
       <ul>
         <li>Total de juegos: <strong>{{ total }}</strong></li>
-        <li>Completados: <strong>{{ completados }}</strong></li>
-        <li>Pendientes: <strong>{{ pendientes }}</strong></li>
+        <li>Completado: <strong>{{ ((completados / total) * 100).toFixed(2) }}%</strong></li>
+        <li>Pendiente: <strong>{{ ((pendientes / total) *100).toFixed(2) }}%</strong></li>
       </ul>
     </div>
   <div class="botones">
