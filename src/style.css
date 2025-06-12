@@ -215,7 +215,7 @@ router-link {
 }
 
 .form-group input {
-  width: auto;
+  width: 350px;
   padding: 0.5rem;
   margin-bottom: 1rem;
   border-radius: 8px;
@@ -224,12 +224,6 @@ router-link {
   display: grid;
   margin: 0 auto 1rem auto;
 }
-
-/*.checkbox-group {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}*/
 
 input[type="text"],
 input[type="number"] {

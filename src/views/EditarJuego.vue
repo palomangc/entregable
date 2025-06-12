@@ -84,7 +84,7 @@ async function actualizarJuego() {
 
       <div class="form-group">
         <label for="tiempo">Tiempo:</label>
-        <input type="number" id="tiempo" v-model.number="form.tiempo" required min="0" max="1000"/>
+        <input type="number" id="tiempo" v-model.number="form.tiempo" required min="1" max="500"/>
       </div>
 
       <div class="form-group" style="display: flex; align-items: center; gap: 2.5rem;">
