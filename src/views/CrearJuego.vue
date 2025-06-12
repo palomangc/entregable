@@ -48,17 +48,17 @@ const crearJuego = async () => {
       <form @submit.prevent="crearJuego">
         <div>
           <label for="nombre">Nombre:</label>
-          <input type="text" id="nombre" v-model="juego.nombre" required />
+          <input type="text" id="nombre" v-model="juego.nombre" required minlength="3" maxlength="250" />
         </div>
 
         <div>
           <label for="puntos">Puntos:</label>
-          <input type="number" id="puntos" v-model="juego.puntos" required />
+          <input type="number" id="puntos" v-model="juego.puntos" required min="0" max="1000" />
         </div>
 
         <div>
           <label for="tiempo">Tiempo:</label>
-          <input type="number" id="tiempo" v-model="juego.tiempo" required />
+          <input type="number" id="tiempo" v-model="juego.tiempo" required min="1" max="500"/>
         </div>
 
         <button type="submit">Guardar juego</button>
