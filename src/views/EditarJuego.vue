@@ -74,17 +74,17 @@ async function actualizarJuego() {
     <form @submit.prevent="actualizarJuego">
       <div class="form-group">
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" v-model="form.nombre" required />
+        <input type="text" id="nombre" v-model="form.nombre" required minlength="3" maxlength="250"/>
       </div>
 
       <div class="form-group">
         <label for="puntos">Puntos:</label>
-        <input type="number" id="puntos" v-model.number="form.puntos" required />
+        <input type="number" id="puntos" v-model.number="form.puntos" required min="0" max="1000" />
       </div>
 
       <div class="form-group">
         <label for="tiempo">Tiempo:</label>
-        <input type="number" id="tiempo" v-model.number="form.tiempo" required />
+        <input type="number" id="tiempo" v-model.number="form.tiempo" required min="0" max="1000"/>
       </div>
 
       <div class="form-group" style="display: flex; align-items: center; gap: 2.5rem;">
