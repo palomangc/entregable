@@ -214,6 +214,10 @@ router-link {
   margin-bottom: 0.5rem;
 }
 
+.form-group {
+  display: flex;
+}
+
 .form-group input {
   width: 350px;
   padding: 0.5rem;
