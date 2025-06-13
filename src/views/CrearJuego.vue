@@ -2,7 +2,6 @@
 import { reactive } from 'vue'
 import { supabase } from '../lib/supabase'
 import { useRouter } from 'vue-router'
-import ListaJuegos from './ListaJuegos.vue'
 
 const emit = defineEmits(['nuevo-juego'])
 const router = useRouter()
@@ -28,6 +27,7 @@ const crearJuego = async () => {
     alert('Hubo un error al guardar el juego')
     return
   }
+console.log('Respuesta de Supabase:', data)
 
   emit ('nuevo-juego', data)
   alert ('Juego creado con éxito')
