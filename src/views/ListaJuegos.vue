@@ -77,7 +77,7 @@ async function borrarJuego(id) {
 
 
 const juegosFiltradosOrdenados = computed (() => {
-  let lista = juegos.value
+  let lista = juegos.value || []
 
   //Filtrar por nombre
   if (filtroNombre.value.trim() !== '') {
