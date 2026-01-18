@@ -22,6 +22,7 @@ const crearJuego = async () => {
     tiempo: juego.tiempo,
     completado: juego.completado
   }])
+  .select()
   if (error) {
     console.info ("No se ha podido crear el juego en Supabase", error.message)
     alert('Hubo un error al guardar el juego')
