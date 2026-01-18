@@ -50,7 +50,7 @@ function editarJuego(id) {
 onMounted ( async () => {
   const {data, error}= await supabase
     .from('juegos')
-    .select('id, nombre, puntos, tiempo, completado, creado_el')
+    .select('id, nombre, puntos, tiempo, completado')
     .order('completado', { ascending: true});
     juegos.value = data
 })
