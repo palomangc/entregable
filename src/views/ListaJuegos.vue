@@ -13,7 +13,7 @@ const ordenPuntuacion = ref('desc')
 async function cargarJuegos() {
   const { data, error } = await supabase
     .from('juegos')
-    .select('id, nombre, puntos, tiempo, completado, creado_el')
+    .select('id, nombre, puntos, tiempo, completado')
   if (!error) juegos.value = data
 }
 
